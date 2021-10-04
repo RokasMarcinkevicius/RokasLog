@@ -29,26 +29,35 @@ namespace RokasLog
                 streamWriter.WriteLine(message);
                 streamWriter.Close();
             }
-                       
         }
     }
 
+    //Code to log data to the database
     public class DBLogger : LogBase
     {
         string connectionString = string.Empty;
         public override void Log(string message)
         {
-            //Code to log data to the database
+            throw new NotImplementedException();
+        }
+    }
+
+    //Code to log data to the database
+    public class RabbitMqLogger : LogBase
+    {
+        string connectionString = string.Empty;
+        public override void Log(string message)
+        {
+            throw new NotImplementedException();
         }
     }
 
     public class EventLogger: LogBase
     {
-
         public EventLogger()
         {
         }
-        
+
         public EventLogger(string v)
         {
         }
@@ -68,6 +77,5 @@ namespace RokasLog
             Console.WriteLine(message);
             return message;
         }
-    }     
+    }
 }
-         
