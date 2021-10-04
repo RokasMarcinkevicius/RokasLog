@@ -4,10 +4,10 @@ namespace RokasLog
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args, LogHelper logHelper)
         {
-            LogHelper.Log(LogTarget.File, "Hello");
-            LogHelper.Log(LogTarget.EventLog, "Hello");
+            logHelper.Log(LogTarget.File, "Hello");
+            logHelper.Log(LogTarget.EventLog, "Hello");
         }
     }
 }
